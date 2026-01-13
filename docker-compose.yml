@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # MongoDB for pet-stores (port 27017)
+  mongo-petstore:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_petstore_data:/data/db
+
+  # MongoDB for pet-orders (port 27018)
+  mongo-petorder:
+    image: mongo
+    ports:
+      - "27018:27017" 
+    volumes:
+      - mongo_petorder_data:/data/db
+
+  # Pet Store 1 service
+  pet-store1:
+    build: 
+      context: ./pet-store
+      args:
+        - STORE_ID=1
+    ports:
+      - "5001:8000"
+    environment:
+      - MONGO_HOST=mongo-petstore
+      - MONGO_PORT=27017
+    depends_on:
+      - mongo-petstore
+
+  # Pet Store 2 service
+  pet-store2:
+    build: 
+      context: ./pet-store
+      args:
+        - STORE_ID=2
+    ports:
+      - "5002:8000"
+    environment:
+      - MONGO_HOST=mongo-petstore
+      - MONGO_PORT=27017
+    depends_on:
+      - mongo-petstore
+
+  # Pet Order service
+  pet-order:
+    build: ./pet-order
+    ports:
+      - "5003:8080"
+    environment:
+      - MONGO_HOST=mongo-petorder
+      - MONGO_PORT=27017 
+    depends_on:
+      - mongo-petorder
+      - pet-store1
+      - pet-store2
+
+# Docker volume for MongoDB data persistence
+volumes:
+  mongo_petstore_data:
+  mongo_petorder_data:
+

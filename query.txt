@@ -1,0 +1,6 @@
+query: 1,family=Canidae;
+query: 2,type=bulldog;
+query: 1,genus=Felis;
+purchase: {"purchaser": "John Doe", "pet-type": "Golden Retriever", "store": 1, "pet-name": "Lander", "purchase-id": "test-001"};
+query: 2,family=Felidae;
+
