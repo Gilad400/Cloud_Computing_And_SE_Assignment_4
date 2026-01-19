@@ -26,7 +26,7 @@ PET3_TYPE1 = {"name": "Shelly", "birthdate": "07-07-2019"}
 PET4_TYPE2 = {"name": "Felicity", "birthdate": "27-11-2011"}  # Fixed: DD-MM-YYYY
 PET5_TYPE3 = {"name": "Muscles"}
 PET6_TYPE3 = {"name": "Junior"}
-PET7_TYPE4 = {"name": "Lazy", "birthdate": "08-07-2018"}
+PET7_TYPE4 = {"name": "Lazy", "birthdate": "07-08-2018"}
 PET8_TYPE4 = {"name": "Lemon", "birthdate": "27-03-2020"}  # Fixed: DD-MM-YYYY
 
 
