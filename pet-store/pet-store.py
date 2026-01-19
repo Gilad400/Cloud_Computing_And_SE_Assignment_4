@@ -758,14 +758,5 @@ def get_picture(filename):
     except Exception as e:
         return error_500(str(e))
 
-# @app.route('/kill', methods=['GET'])
-# def kill_container():
-#     """
-#     Handle GET requests to /kill endpoint.
-    
-#     Kills the container for testing restart functionality.
-#     """
-#     os._exit(1)
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)

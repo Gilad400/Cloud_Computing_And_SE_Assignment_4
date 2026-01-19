@@ -294,14 +294,5 @@ def get_transactions():
     except Exception as e:
         return jsonify([]), 200
 
-# @app.route('/kill', methods=['GET'])
-# def kill_container():
-#     """
-#     Handle GET requests to /kill endpoint.
-    
-#     Kills the container for testing restart functionality.
-#     """
-#     os._exit(1)
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
