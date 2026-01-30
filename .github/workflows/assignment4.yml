@@ -219,7 +219,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: pytest
           path: assn4_test_results.txt
           retention-days: 90
       
@@ -354,14 +354,14 @@ jobs:
       - name: Upload response file
         uses: actions/upload-artifact@v4
         with:
-          name: query-response
+          name: response
           path: response.txt
           retention-days: 90
       
       - name: Upload final log file
         uses: actions/upload-artifact@v4
         with:
-          name: log-final
+          name: log
           path: log.txt
           retention-days: 90
       
@@ -370,4 +370,3 @@ jobs:
         run: |
           docker stop pet-store1 pet-store2 pet-order mongo-petstore mongo-petorder || true
           docker rm pet-store1 pet-store2 pet-order mongo-petstore mongo-petorder || true
-
