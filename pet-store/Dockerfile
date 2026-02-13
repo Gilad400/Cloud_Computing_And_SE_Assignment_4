@@ -1,4 +1,4 @@
-# FROM python:alpine3.17
+FROM python:alpine3.17
 
 WORKDIR /app
 
@@ -16,3 +16,4 @@ EXPOSE 8000
 
 
 CMD ["python", "pet-store.py"]
+
