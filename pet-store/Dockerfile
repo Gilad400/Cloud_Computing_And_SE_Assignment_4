@@ -1,4 +1,4 @@
-FROM python:alpine3.17
+# FROM python:alpine3.17
 
 WORKDIR /app
 
@@ -13,5 +13,6 @@ ENV STORE_ID=${STORE_ID}
 ENV NINJA_API_KEY=SraBF/za+qf7A4j4VCS3Tg==QVrQZLNr9qnIDVId
 
 EXPOSE 8000
+
 
 CMD ["python", "pet-store.py"]
