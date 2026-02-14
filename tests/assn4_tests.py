@@ -299,8 +299,8 @@ def test_get_pets_for_type4_from_store2():
     
     response = requests.get(f"{PET_STORE2_URL}/pet-types/{id_6}/pets")
     
-    # assert response.status_code == 200, f"Expected 200, got {response.status_code}"
-    assert response.status_code == 404, f"Expected 200, got {response.status_code}"
+    assert response.status_code == 200, f"Expected 200, got {response.status_code}"
+    # assert response.status_code == 404, f"Expected 200, got {response.status_code}"
     
     data = response.json()
     assert isinstance(data, list), "Response should be a list"
@@ -319,5 +319,6 @@ def test_get_pets_for_type4_from_store2():
             assert pet["birthdate"] == PET7_TYPE4["birthdate"]
         elif pet["name"] == PET8_TYPE4["name"].lower():
             assert pet["birthdate"] == PET8_TYPE4["birthdate"]
+
 
 
